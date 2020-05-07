@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Coding Portfolio</title>
+    <style>
+        html {height: 100%;}
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: lightgrey;
+            width: 100%;
+            margin: 0; /*Important for navbar position:fixed to work correctly.
+                        *Removes default formatting.*/
+            
+        }
+        #navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end; /*Part of flexbox, chid, i.e. div is justified to the center*/
+            align-items: center; /*Part of flexbox, chid, i.e. div is aligned to the center*/
+            width: 100%;
+            /* width: calc(100% - 6rem); Didn´t use because I added padding to div.  because if you make the width 100% then the margin on
+                                       *right will not be visible.  the minus sign has to have a space
+                                       *on each side.  notice that 6rem is being subracted, i.e
+                                       *double the margin*/
+            height: 3rem;
+            background-color: lightblue;
+           position: fixed; /*keeps bar from scrolling with rest of the page, so that it
+                              *always stays on top of page*/
+           
+           }
+        
+        #navbar > div {
+            background-color: lightgreen;
+            margin-right: 4%;}
+        
+        #welcome {
+            background-color: orange;
+            height: 100vh; 
+            margin-top:auto;
+            margin-bottom: auto;
+            font-size: 5vw;
+            width: 100%;
+            text-align: center;
+            
+            
+        }
+        
+        #welcome > div > h1 {
+           text-align: center;
+        
+        }
+        #main-section {
+            background-color: lightgreen;
+            width: 100%;
+        }
+        
+        #projects {
+            margin: 4rem;
+        }
+        
+        .thumbnail {
+            background-color: lightblue;
+            }
+        .screenshot {
+            width: calc(100% - 20px);
+            height: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;}
+      /*  .snapshot iframe
+        {/*width: 1440px;
+        height: 900px;
+        This should give us an appropriate size and aspect ratio
+         *to capture most webpages in an appealing manner.
+         
+        }
+        */
+       /* .snapshot
+        {position: relative;
+        -ms-zoom: 0.25;
+        -moz-transform: scale(0.25);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.25);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.25);
+        -webkit-transform-origin: 0 0;
+        
+        /*ms, moz and o are for browsers.  Transform: scale(0.25) means that image is .25 times smaller
+         *and origin 0 0 tells where the transformation is taking place about.  This means that the top left, ie x=0 and y=0
+         *point will stay the same, and others will change around that.
+        width: auto;
+        height: auto;
+        }
+        
+    */
+       /* .snapshot:after {
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*masks the iframe so that it behaves more like an image and you can't
+            click on links and such
+        }
+        
+        /*.snapshot-container {
+            width: calc(1440px * 0.25);
+            height: calc(900px * 0.25);
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+        }*/
+         .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /*auto-fill means there will automatically be enough columns, minmax(200px,1fr) the
+             minimum column size, and 1fr is the max*/
+            
+            grid-gap: 1rem;
+        }
+        
+        .center {
+            text-align: center;
+            width: 100%;
+        }
+        .center-contents {
+            width: 50%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        
+        #contact {
+            background-color: lightblue;
+        }
+        
+        #contact-heading {
+            text-align: center;
+        }
+        
+        #contact-links {
+            display: flex;
+            flex-direction: row;
+            
+        }
+        
+                 
+    </style>
+</head>
+<body>
+<div id="navbar">
+    <div id="nav-container">
+        <a class="navlinks" href="#about">About</a>
+        <a class="navlinks" href="#projects">Projects</a>
+        <a class="navlinks" href="#contact">Contact</a>
+    </div>
+</div>  
+
+<div id="welcome">
+    <div>
+        <h1>Hey, I'm Leonard</h1>
+        <h2>a web developer</h2>
+    </div>
+</div>
+<div id="main-section">
+    <h1 class="center">
+        These Are My Projects
+    </h1>
+    <div id="projects" class="grid">
+        <a href="Tribute_Page/FreeCodeCamp_Tribute_Page.html" class="thumbnail">
+            <section id="tribute-page" class="thumbnail">
+            <h3 class="center">Tribute Page</h3>
+           <img class="screenshot" src="Tribute_Page_Screenshot.jpeg">
+           <!-- <div class="snapshot-container">
+                <div class="snapshot">
+                    <iframe src="Tribute_Page/FreeCodeCamp_Tribute_Page.html" frameborder="0">
+                        <!-- frameborder="0" keeps there from being an ugly frame.  We want this to look and behave
+                        like an image
+                    </iframe>
+                </div>
+            </div-->
+		</section>
+        </a>
+        
+        <a href="Survey_Form_Project.html" class="thumbnail">
+            <section id="survey-form">
+            <h3 class="center">Survey Form</h3>
+            <img class="screenshot" src="Survey_Form_Screenshot.jpeg">
+        </section>
+            </a>
+        
+        <a href="Product_Landing_Page/Product_Landing_Page.html" class="thumbnail">
+            <section id="product-page">
+                <h3 class="center">Product Page</h3>
+                <img class="screenshot" src="Product_Page_Screenshot.jpeg">
+            </section>
+        </a>
+        <a href="Technical_Documentation_Page.html" class="thumbnail">
+            <section id="technical-documentation">
+                <h3 class="center">Technical Documentation</h3>
+                <img class="screenshot" src="Technical_Documentation_Screenshot.jpeg">
+            </section>
+        </a>
+    </div>
+</div>
+
+</body>
+<div id="contact">
+    <div id="contact-heading">
+        <h1>Contact Me</h1>
+    </div>
+    <div id="contact-links" class="center-contents">
+       
+        <a href="https://www.facebook.com/leonardm0hr">facebook</a>
+        <a>GitHub</a>
+        <a>Send an Email</a>
+        <a>Call Me</a>
+       
+    </div>
+</div>
+</html>
